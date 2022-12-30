@@ -1,0 +1,24 @@
+body{
+    background-image: url("P1.jpg");
+    background-size: cover;
+}
+.container {
+    padding-top: 30px;
+    padding-right: 0px;
+}
+
+.col-5{
+    height: 500px;
+    color: white;
+    padding-top: 100px;
+}
+.col-5 h1 {
+    font-size: 100px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.col-5 a {
+    text-decoration: none;
+    color: rgb(235, 226, 214);
+    font-size: small;
+
+}

@@ -1,0 +1,80 @@
+#include <iostream>
+using namespace std;
+
+template <typename T> void BubbleSorting(T array ,int size) {
+	
+	int temp;   // temp for swapping
+	int no_of_c;   // no of comparisions after every pass
+	int Total_c=0;   // Total no of comparisions 
+	int Total_p=0;  // no of passes ,after every pass
+	int Total_swap=0; //  Total no of swaps
+	int  swap;    // no of swaps , after every pass
+	
+	for(int i=1; i<size; i++) {                
+		no_of_c=0;
+		swap=0;
+		for(int j=0; j<size-i; j++)
+     	{
+			if(array[j]>array[j+1]) {
+			
+			temp = array[j];
+			array[j]=array[j+1];
+			array[j+1]=temp;
+			
+			swap++;
+			Total_swap++;
+			}
+			no_of_c++;
+			Total_c++;
+		}
+		Total_p=i;
+		cout<<"Pass "<<i<<endl;
+		cout<<"Number of comparisons : "<<no_of_c<<endl;
+		cout<<"Number of swapings : "<<swap<<endl;
+		for(int p=0; p<size; p++) {
+			cout<<array[p]<<" ";
+		}
+		cout<<endl;	
+		
+		if(swap==0) {
+			break;
+		}
+		
+	}
+	cout<<":::: Ans :::: "<<endl;
+	cout<<"Total Pass : "<<Total_p<<endl;
+	cout<<"Total Number of comparisons : "<<Total_c<<endl;
+	cout<<"Total Number of swappings : "<<Total_swap<<endl;
+	for(int i=0; i<size; i++) {
+		cout<<array[i]<<" ";
+	}
+	cout<<endl;
+
+	return;
+}
+
+int main() {
+	
+	cout<<"**** Welcome in Bubble sorting ****"<<endl<<endl;
+	int choice = 1 ;
+	
+	while(choice) {
+		cout<<"enter size of array : "<<endl;
+		int size;
+		cin>>size;
+		
+		cout<<"enter elements of array : "<<endl;
+		int *array = new int[size];
+		
+		for(int i=0; i<size; i++) {
+			cin>>array[i];
+		}		
+		
+		BubbleSorting(array,size);
+		
+		cout<<"Do you want to try one more ? "<<endl;
+		cout<<"Enter y/n = 0/1 : ";
+		cin>>choice;
+	}
+	return 0;
+}

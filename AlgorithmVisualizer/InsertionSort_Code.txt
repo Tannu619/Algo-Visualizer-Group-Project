@@ -1,0 +1,47 @@
+//C++ program for insertion sort
+#include <iostream>
+using namespace std;
+ 
+//Function to sort an array using insertion sort
+void insertionSort(int Array[], int n)
+{
+    int i, key, j;
+    for (i=1; i<n; i++)
+    {
+        key=Array[i];
+        j=i-1;
+        while (j>=0 && Array[j]>key)
+        {
+            Array[j+1]=Array[j];
+            j=j-1;
+        }
+        Array[j+1]=key;
+    }
+}
+ 
+//A function to print an array of size n
+void printArray(int Array[], int n)
+{
+    int i;
+    for (i=0; i<n; i++)
+        cout<<Array[i]<<" ";
+    cout<<endl;
+}
+ 
+//Driver code
+int main()
+{
+	int n, i;
+	cout<<"Enter the size of the array you want: ";
+	cin>>n;
+	int Array[n];
+	cout<<"Enter the elements for the Array: ";
+	for(i=0; i<n; i++)
+	{
+		cin>>Array[i];
+	}
+    insertionSort(Array, n);
+    cout<<"Sorted Array: ";
+    printArray(Array, n);
+    return 0;
+}

@@ -1,0 +1,121 @@
+body {
+    background-image: var(--bgpic);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+:root {
+    --colorwhite: white;
+    --colorblack: black;
+    --colorbg: #001118;
+    --bgpic: url("P1.jpg");
+}
+
+.lightmode {
+    --colorwhite: rgb(53, 52, 52);
+    --colorblack: white;
+    --colorbg:  white;
+    --bgpic: url("LightBg.jpg");
+}
+
+
+/* Navbar */
+.navbar {
+    height: 148px;
+    background-color: var(--colorbg);
+    border-bottom: var(--colorwhite) solid 1px;
+}
+.navbar ul {
+    display: flex;
+    margin-top: 122px;
+}
+.navbar ul li { 
+    list-style: none;
+    font-size: 16px;
+
+}
+.navbar ul li a {
+    text-decoration: none;
+    padding: 12px 23px;
+    border-radius: 16px;
+    border: 1px solid rgb(66, 64, 64);
+    color: var(--colorwhite);
+    background-color: var(--colorbg);
+}
+.navbar ul li a:hover {
+    font-size: 16px;
+    background-color: var(--colorwhite);
+    color: var(--colorblack);
+    text-decoration: none;
+ }
+ .ChangeMode {
+    border: 1px solid rgb(66, 64, 64);
+    border-radius: 16px;
+    text-align: center;
+    width: 85px;
+    height: 47px;
+    margin-top: 106px;
+    margin-left: -68px;
+    margin-right: 20px;
+    background-color: var(--colorbg);
+ }
+ .ChangeMode:hover {
+    border: 1px solid white;
+    cursor: pointer;
+ }
+/* Head in navbar */
+.Head h1{
+    color: var(--colorwhite);
+    margin-left: 51px;
+    margin-top: 1px;
+    font-size: 60px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.Head a{
+    text-decoration: none;
+}
+.Head p{
+    color: var(--colorwhite);
+    font-size: medium;
+    margin-left: 50px;
+}
+
+.col-5{
+    height: 500px;
+    color: var(--colorwhite);
+    padding-top: 100px;
+}
+.col-5 {
+    font-size: 20px;
+}
+.col-5 a {
+    text-decoration: none;
+    color: var(--colorwhite);
+    font-size: small;
+
+}
+
+.title {
+    /* background-color: aliceblue;
+    border: 1px solid black;
+    color: black; */
+}
+
+
+
+
+
+
+#footer {
+    /* border: 1px solid white; */
+    height: 40px;  
+    margin-top: -50px;  
+    text-align: center;
+}
+#footer a {
+    text-decoration: none;
+    color: var(--colorwhite);
+}

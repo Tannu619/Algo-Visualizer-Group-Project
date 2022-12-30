@@ -1,0 +1,69 @@
+//C++ program for implementation of Heap Sort
+#include <iostream>
+using namespace std;
+  
+//To heapify a subtree rooted with node i which is
+//an index in Array[]. n is size of heap
+void heapify(int Array[], int n, int i)
+{
+    int largest=i; // Initialize largest as root
+    int l=2*i+1; // left = 2*i + 1
+    int r=2*i+2; // right = 2*i + 2
+  
+    // If left child is larger than root
+    if (l<n && Array[l]>Array[largest])
+        largest=l;
+  
+    // If right child is larger than largest so far
+    if (r<n && Array[r]>Array[largest])
+        largest=r;
+  
+    // If largest is not root
+    if (largest!=i) 
+	{
+        swap(Array[i], Array[largest]);
+        // Recursively heapify the affected sub-tree
+        heapify(Array, n, largest);
+    }
+}
+  
+// main function to do heap sort
+void heapSort(int Array[], int n)
+{
+    // Build heap (rearrange array)
+    for (int i=n/2-1; i>=0; i--)
+        heapify(Array, n, i);
+    // One by one extract an element from heap
+    for (int i=n-1 ; i>=0; i--) 
+	{
+        // Move current root to end
+        swap(Array[0], Array[i]);
+        // call max heapify on the reduced heap
+        heapify(Array, i, 0);
+    }
+}
+  
+//A function to print array of size n 
+void printArray(int Array[], int n)
+{
+    for (int i=0; i<n; ++i)
+        cout<<Array[i]<<" ";
+    cout<<"\n";
+}
+  
+//Driver program
+int main()
+{
+    int n, i;
+	cout<<"Enter the size of the array you want: ";
+	cin>>n;
+	int Array[n];
+	cout<<"Enter the elements for the Array: ";
+	for(i=0; i<n; i++)
+	{
+		cin>>Array[i];
+	}
+    heapSort(Array, n);
+    cout<<"Sorted array is: ";
+    printArray(Array, n);
+}
